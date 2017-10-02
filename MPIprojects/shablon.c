@@ -1,0 +1,45 @@
+//compiling: mpicc -o exe_c mpi_c.c
+//running: mpiexec -l -n N ./exe.c
+#include <stdlib.h>
+#include "mpi.h"
+
+int main(int argc, char** argv)
+{
+	//initializing global veriables{
+
+	//}-------------------------
+	
+	//Initialising MPI
+	int rank, size;
+	MPI_Status status;
+	MPI_Init(&argc, &argv);
+	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+	MPI_Comm_size(MPI_COMM_WORLD, &size);
+	if(size==4)
+	{
+		if(rank==0)
+		{
+			//code of first process
+		}
+		else if(rank==1)
+		{
+			//code of second process
+		}
+		else if(rank==2)
+		{
+			//code of third process
+		}
+		else if(rank==3)
+		{
+			//code of fourth process
+		}
+		
+	}
+	else
+	{ 
+		if(rank==0)
+		printf("Not 4 process.\nAutomatic stop.\n");
+	}
+	MPI_Finalize();
+	return 0;
+}

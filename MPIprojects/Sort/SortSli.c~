@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void MakeRandIntFile(char * name, int lengs)
+{
+	int a;
+	FILE *filew;
+	filew = fopen(name, "w");
+	int i;	
+	srand(time(NULL));
+	for(i=0; i<lengs;i++)
+	{
+		//a[i]=10+rand()%100;
+		a=1+rand()%lengs;
+		fprintf(filew,"%d \n", a);
+	}
+	fclose(filew);	
+}
+void makeFile(char *name, double *a)
+{
+	FILE *file;
+	file = fopen("fprintf.txt", "w");
+
+	int i;
+	for(i=0; i<50;i++)
+	{
+		fprintf(file,"%e \n", a[i]);
+	}
+	fprintf(file,"EOF!!!\n");
+	fclose(file);
+}
+void ReadFile(char* name, double *aw, int *ii)
+{
+	FILE *filer;
+	filer = fopen(name, "r");
+	int i;
+	for(i=0; ;i++)
+	{
+		fscanf(filer,"%lf",&aw[i]);
+		if (getc(filer)==EOF) break;
+	}
+	printf("numbers: %d\n",(int)i);
+	int j;
+	/*for(j=0; j<i;j++)
+	{
+		printf("%f\n",aw[j]);
+	}*/
+	*ii=(int)i;
+	printf("numbers: %d\n",*ii);
+	fclose(filer);
+}
+double* Merge(double *a, double *b, int la, int lb)
+{
+	double *m;
+	m = (double*)malloc(sizeof(double)*(la+lb));
+	int n = 0;
+	while((la>0)&&(lb>0))
+	{
+		if(*a < *b)
+		{
+			m[n]=*a;
+			a++;
+			la--;
+		}
+		else
+		{
+			m[n]=*b;
+			b++;
+			lb--;
+		}
+		n++;
+	}
+	if (la==0)
+	{
+		int i;
+		for(i=0; i<lb; i++)
+		{
+			m[n++]=*b++;
+		}
+	}	
+}
+
+void mergeSort(double *mas, int len)
+{
+	int n=1,l,ost;
+	double *m;
+	m = (double*)malloc(sizeof(double)*len);
+
+	while (n < len)
+	{
+		l=0;
+
+		while (l<len)
+		{
+			if(l+n >=len) break;
+			ost = (l+n*2>len) ? (len-(l+n)) : n;
+         		m = Merge(mas + l, mas + l + n, n, ost);
+			int i;
+			for (i = 0; i<n+ost; i++) 
+			{
+				printf("ff\n");
+				mas[l+i] = *m[i];
+			}
+        		//free(m);
+        		l += n*2;
+		}
+		n *=2;
+	}
+}
+
+int main(int argc, char** argv)
+{
+	//double *a;
+	//a = (double*)malloc(sizeof(double)*1000);
+	double *aw;
+	aw = (double*)malloc(sizeof(double)*10000000);
+	int *i = (int*)malloc(sizeof(int));
+	//int i;
+	MakeRandIntFile("data.dat",500000);
+	ReadFile("data.dat",aw, i);
+	int leng=*i;
+	printf("%d \n", leng);
+	mergeSort(aw,leng);
+	//free(a);	
+	free(aw);
+	return 0;
+}

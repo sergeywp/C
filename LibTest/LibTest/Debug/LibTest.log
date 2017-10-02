@@ -1,0 +1,13 @@
+﻿Build started 06.01.2017 9:55:27.
+     1>Project "c:\Users\Сергей\documents\visual studio 2012\Projects\LibTest\LibTest\LibTest.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt MathFuncsLib.cpp
+         MathFuncsLib.cpp
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"c:\users\сергей\documents\visual studio 2012\Projects\LibTest\Debug\LibTest.lib" /NOLOGO Debug\MathFuncsLib.obj
+         LibTest.vcxproj -> c:\users\сергей\documents\visual studio 2012\Projects\LibTest\Debug\LibTest.lib
+     1>Done Building Project "c:\Users\Сергей\documents\visual studio 2012\Projects\LibTest\LibTest\LibTest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.03

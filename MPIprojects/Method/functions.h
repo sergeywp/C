@@ -1,0 +1,99 @@
+//#include "stdafx.h"
+//#include <iostream>
+#include "writemass.h"
+#include <cmath>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+double fun(double *x, double **a, double *b)
+{
+	return a[0][0]*x[0]*x[0]+2*a[0][1]*x[0]*x[1]+a[1][1]*x[1]*x[1]+b[0]*x[0]+b[1]*x[1];
+}
+double dfundx(double *x, double **a, double *b)
+{
+	return 2*a[0][0]*x[0]+2*a[0][1]*x[1]+b[0];
+}
+double dfundy(double *x, double **a, double *b)
+{
+	return 2*a[0][1]*x[0]+2*a[1][1]*x[1]+b[1];
+}
+double newx(double *x, double **a, double *b)
+{
+	return (-2*a[0][1]*x[1]-b[0])/(2*a[0][0]);
+}
+double newy(double *x, double **a, double *b)
+{
+	return (-2*a[0][1]*x[0]-b[1])/(2*a[1][1]);
+}
+void InitializeMas(double **a, double *b)
+{
+	//setlocale( LC_ALL,"Russian" );
+	printf("Enter the weight A11, A12, A22\n");
+	//cout<<"Enter the weight A11, A12, A22:"<<endl;
+	scanf("%lf%lf%lf",&a[0][0],&a[0][1],&a[1][1]);
+	//printf("%lf%lf%lf",a[0][0],a[0][1],a[1][1]);
+	//cin>>a[0][0]>>a[0][1]>>a[1][1];
+	a[1][0]=a[0][1];
+	//a[0][0] = 4;
+	//a[0][1] = 2;
+	//a[1][1] = 3;
+	//writemass2(a,2);
+	//b[0]=1;
+	//b[1]=1;
+	printf("Enter the weight B1, B2\n");
+	//cout<<"Enter the weight b1, b2:"<<endl;
+	scanf("%lf%lf",&b[0],&b[1]);
+	//printf("%lf%lf",b[0],b[1]);
+	//writemass1(b,2);
+	//cin>>b[0]>>b[1];
+}
+double * MinMeth(double *x, double **a, double *b)
+{
+	double eps=0.0000000000001;
+
+	double *epps;
+	//epps = new double[2];
+	epps = (double*)malloc(2*sizeof(double));
+	double *next;
+	next = (double*)malloc(2*sizeof(double));
+	//next = new double[2];
+
+	int i=0;
+	do
+	{
+
+		next[0]=newx(x,a,b);
+		next[1]=newy(x,a,b);
+		epps[0]=abs(x[0]-next[0]);
+		epps[1]=abs(x[1]-next[1]);
+		//writemass1(epps,2);
+		//cout<<epps[0]<<"   "<<epps[1]<<endl;
+		if(abs(x[0]-next[0])>eps) {
+			x[0]=next[0];
+			if(abs(x[1]-next[1])>eps) x[1]=next[1];
+		}
+		else
+		{
+			if(abs(x[1]-next[1])>eps) x[1]=next[1];
+			else break;
+		}
+		i++;
+	}
+	while(i<1000);
+	return x;
+}
+void InitializeNachZnach(double *x)
+{	
+	printf("Enter the starting x, y\n");
+	//cout<<"Enter starting x,y"<<endl;
+	//cin>>x[0]>>x[1];
+	scanf("%lf%lf",&x[0],&x[1]);
+	//printf("%lf%lf",x[0],x[1]);
+//	x[0]=1;
+//	x[1]=1;
+	//writemass1(x,2);
+
+}
+

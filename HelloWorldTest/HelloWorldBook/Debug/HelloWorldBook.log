@@ -1,0 +1,17 @@
+﻿Build started 05.08.2017 17:35:26.
+     1>Project "C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\HelloWorldBook\HelloWorldBook.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt tStack.cpp
+         tStack.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\Debug\HelloWorldBook.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\Debug\HelloWorldBook.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\Debug\HelloWorldBook.lib" /MACHINE:X86 Debug\helloWorld.obj
+         Debug\shape.obj
+         Debug\StringNew.obj
+         Debug\student.obj
+         Debug\tStack.obj
+         HelloWorldBook.vcxproj -> C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\Debug\HelloWorldBook.exe
+     1>Done Building Project "C:\Users\Сергей\Documents\Visual Studio 2012\Projects\HelloWorldTest\HelloWorldBook\HelloWorldBook.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.98

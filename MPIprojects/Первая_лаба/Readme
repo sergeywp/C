@@ -1,0 +1,14 @@
+Examples of functions that have global minimum:
+	f(x,y)=4*x*x-4*x*y+3*y*y+x+y; (-5/16,-3/8)
+	f(x,y)=8*x*x-4*x*y+3*y*y+x+y; (-1/8,-1/4)
+	
+
+Refrences:
+	main: /home/sergey/Первая_лаба/run
+	      /home/sergey/Первая_лаба/run.c
+		
+	method: /home/sergey/MPIproject/Method/Method/exe_mpi_end
+	        /home/sergey/MPIproject/Method/Method/consoleApplicatio1.cpp
+
+	gnuplot: /home/sergey/gnuplot/1/test/gnuplot_exe
+		 /home/sergey/gnuplot/1/test/gnuplot1.c

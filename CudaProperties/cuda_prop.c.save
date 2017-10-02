@@ -1,0 +1,10 @@
+#include "../common/book.h"
+
+int main( void ){
+	cudaDeviceProp prop;
+
+	int count
+	HANDLE_ERROR( cudaGetDeviceCount( &count ) )
+	f	or(int i=0; i<count; i++){
+	}
+}

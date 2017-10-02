@@ -1,0 +1,4 @@
+Examples of functions that have global minimum:
+	f(x,y)=4*x*x-4*x*y+3*y*y+x+y; (-5/16,-3/8)
+	f(x,y)=8*x*x-4*x*y+3*y*y+x+y; (-1/8,-1/4)
+	

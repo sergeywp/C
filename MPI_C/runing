@@ -1,0 +1,2 @@
+sudo mpicc Progarmm.c -o out
+mpirun -np 10 -hosts master,salve1 ./out
